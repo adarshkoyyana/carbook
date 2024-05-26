@@ -20,7 +20,7 @@ class ContactUs extends React.Component {
       const { name, email, phone, productService, message } = this.state;
   
       try {
-          const response = await fetch('http://localhost:3001/contact', {
+          const response = await fetch('https://appoint-backend-ibvm.onrender.com/contact', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
