@@ -166,14 +166,14 @@ const App = () => {
               <div className="col-lg-3 col-sm-6">
                 <div className="staff-col">
                   <div className="staff-pic"><img src={require("./images/team-1.jpg")} alt="" /></div>
-                  <h4>Mr. Ramesh Chandra</h4>
+                  <h4> <br></br></h4>
                   <p><strong>Manager</strong></p>
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="staff-col">
                   <div className="staff-pic"><img src={require("./images/team-2.jpg")} alt="" /></div>
-                  <h4>Mr. Nitish Sharma</h4>
+                  <h4> <br></br></h4>
                   <p><strong>Technical Expert</strong></p>
                 </div>
               </div>
