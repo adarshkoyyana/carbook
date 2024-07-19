@@ -14,13 +14,29 @@ class ContactUs extends React.Component {
             message: ''
         };
     }
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    handleScroll = () => {
+        const header = document.querySelector(".main-header");
+        if (window.scrollY > 100) {
+            header.classList.add("fixed-nav");
+        } else {
+            header.classList.remove("fixed-nav");
+        }
+    };
   
     handleSubmit = async (event) => {
       event.preventDefault();
       const { name, email, phone, productService, message } = this.state;
   
       try {
-          const response = await fetch('https://appoint-backend-ibvm.onrender.com/contact', {
+          const response = await fetch('http://localhost:5000/contact', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
@@ -70,10 +86,10 @@ class ContactUs extends React.Component {
             </div>
             <div className="col-md-6 col-sm-4 text-sm-right">
               <div className="top-call">
-                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:00AM - 6:00PM</a>
-                <a href="#" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
+                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:30AM - 6:30PM</a>
+                <a href="https://www.facebook.com/carbestinall/?paipv=0&eav=AfYUHq-IA3Kf_CUOAmg67igTmkSE4UIEaurkUOUeQ0_HwTQP_CwrslGjAbvWiuav0Wc&_rdr" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
                 <a href="#" target="_blank"> <i className="lab la-linkedin-in"></i></a>
-                <a href="#" target="_blank"> <i className="lab la-instagram"></i></a>		
+                <a href="https://www.instagram.com/carbiamotors/?igsh=MTQ4cHY2YmJzbHJ2bw%3D%3D" target="_blank"> <i className="lab la-instagram"></i></a>		
               </div>	
             </div>
           </div>
@@ -125,6 +141,11 @@ class ContactUs extends React.Component {
                     Contact Us
                   </a>
                 </li>
+                <li className="nav-item active">
+                  <a className="nav-link" href="form">
+                    FORM
+                  </a>
+                </li>
                 <li className="nav-item">
                   <a className="nav-link" href="appointment">
                     Book Appointment
@@ -138,7 +159,7 @@ class ContactUs extends React.Component {
       </header>
       <div className="inner-banner">
       <h1>CONTACT US</h1>
-      <img src={require("./images/inner-banner.jpg")} alt="" className="img-responsive" />
+      <img src={require("./images/service-banner.jpg")} alt="" className="img-responsive" />
     </div>
 
     <div className="inner-page">
@@ -196,21 +217,22 @@ class ContactUs extends React.Component {
                         <div className="contact-us-sec">
                             <h2 className="title mb-2 mb-4">Carbia Motors</h2>
                             <p>
-                                <strong className="blue-text">Location</strong> PL No. 131 Ranganadha Nagar,
+                                <strong className="blue-text">Location</strong> PL No. 132 Ranganadha Nagar,
                                 Gopanpally, Srilingampally, Hyderabad 500019.
                             </p>
                             <p>
                                 <strong className="blue-text">Phone</strong>{' '}
                                 <small>
+                                <a href="https://wa.me/919052091234">
+                                        <i className="lab la-whatsapp"></i> +91 9052091234
+                                    </a>
                                     <a href="tel:++919780429999">
                                         <i className="las la-phone"></i> +91 9780429999
                                     </a>
                                     <a href="tel:++919705782222">
                                         <i className="las la-phone"></i> +91 9705782222
                                     </a>
-                                    <a href="https://wa.me/919052091234">
-                                        <i className="lab la-whatsapp"></i> +91 9052091234
-                                    </a>
+                                    
                                 </small>
                             </p>
                             <p className="mb-1">
@@ -227,7 +249,7 @@ class ContactUs extends React.Component {
                 <div className="contact-map">
                     <iframe
                         title="Google Map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43071.94125285683!2d78.453894628735!3d17.409017557824296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1713787048377!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60900.39734274181!2d78.30117!3d17.446555!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93a317662117%3A0xc6dddef25f02c201!2sCarbia%20Motors!5e0!3m2!1sen!2sin!4v1721375895514!5m2!1sen!2sin"
                         height="450"
                         style={{ border: 0, width: '100%' }}
                         allowFullScreen=""
@@ -264,7 +286,7 @@ class ContactUs extends React.Component {
                                 <strong>
                                     <i className="las la-map-marker"></i>
                                 </strong>{' '}
-                                <span>PL No. 131 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span>
+                                <span>PL No. 132 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span>
                             </p>
                             <p>
                                 <strong>
@@ -319,7 +341,7 @@ class ContactUs extends React.Component {
                         <div className="quicklinks">
                             <h3>Carbia SERVICES</h3>
                             <div className="quicklinks-cont">
-                                <p><a href="services">Best Periodic Services</a></p>
+                                <p><a href="services">Periodic Services</a></p>
                                 <p><a href="services">Repairs & Maintenance</a></p>
                                 <p><a href="services">Electrical Repair & Diagnostics</a></p>
                                 <p><a href="services">Denting & Painting</a></p>

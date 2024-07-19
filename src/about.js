@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './images/logo.png';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,6 +6,22 @@ import "slick-carousel/slick/slick-theme.css";
 import './css/TestimonialSlider.css'
 
 const App = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".main-header");
+      if (window.scrollY > 100) {
+        header.classList.add("fixed-nav");
+      } else {
+        header.classList.remove("fixed-nav");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const testimonialSettings = {
     dots: false,
     infinite: true,
@@ -53,10 +69,10 @@ const App = () => {
             </div>
             <div className="col-md-6 col-sm-4 text-sm-right">
               <div className="top-call">
-                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:00AM - 6:00PM</a>
-                <a href="#" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
+                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:30AM - 6:30PM</a>
+                <a href="https://www.facebook.com/carbestinall/?paipv=0&eav=AfYUHq-IA3Kf_CUOAmg67igTmkSE4UIEaurkUOUeQ0_HwTQP_CwrslGjAbvWiuav0Wc&_rdr" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
                 <a href="#" target="_blank"> <i className="lab la-linkedin-in"></i></a>
-                <a href="#" target="_blank"> <i className="lab la-instagram"></i></a>
+                <a href="https://www.instagram.com/carbiamotors/?igsh=MTQ4cHY2YmJzbHJ2bw%3D%3D" target="_blank"> <i className="lab la-instagram"></i></a>
               </div>
             </div>
           </div>
@@ -76,6 +92,11 @@ const App = () => {
                 <li className="nav-item"><a className="nav-link" href="about">About Us</a></li>
                 <li className="nav-item"><a className="nav-link" href="services">Services</a></li>
                 <li className="nav-item"><a className="nav-link" href="contact">Contact Us</a></li>
+                <li className="nav-item active">
+                  <a className="nav-link" href="form">
+                    FORM
+                  </a>
+                </li>
                 <li className="nav-item"><a className="nav-link" href="appointment">Book Appointment</a></li>
               </ul>
             </div>
@@ -86,7 +107,7 @@ const App = () => {
       <div>
       <div className="inner-banner">
         <h1>About Us</h1>
-        <img src={require("./images/inner-banner.jpg")} alt="" className="img-responsive" />
+        <img src={require("./images/service-banner.jpg")} alt="" className="img-responsive" />
       </div>
 
       <div className="inner-page">
@@ -102,7 +123,7 @@ const App = () => {
                 <div className="heading_s1">
                   <h2 className="title">About Carbia Motors</h2>
                 </div>
-                <p>Carbia Motors, located in Hyderabad, Telangana, is a premier automobile service center specializing in comprehensive car repair and maintenance services. Our dedication lies in enhancing vehicle performance through expert servicing, repairs, and a vast inventory of spare parts. Utilizing cutting-edge diagnostic testers and tools, our skilled technicians adeptly tackle various automotive issues spanning engine, transmission, brake, suspension, AC, and electrical repairs.</p>
+                <p>Carbia Motors, located in Gopanpally Hyderabad, Telangana, is a premier automobile service center specializing in comprehensive car repair and maintenance services. Our dedication lies in enhancing vehicle performance through expert servicing, repairs, and a vast inventory of spare parts. Utilizing cutting-edge diagnostic testers and tools, our skilled technicians adeptly tackle various automotive issues spanning engine, transmission, brake, suspension, AC, and electrical repairs.</p>
               </div>
             </div>
           </div>
@@ -138,7 +159,7 @@ const App = () => {
               <div className="col-lg-3 col-sm-6">
                 <div className="staff-col">
                   <div className="staff-pic"><img src={require("./images/team-2.jpg")} alt="" /></div>
-                  <h4>Mr. Dharmendra Singh</h4>
+                  <h4>Mr K. Ramesh Babu</h4>
                   <p><strong>Director</strong></p>
                 </div>
               </div>
@@ -146,14 +167,14 @@ const App = () => {
                 <div className="staff-col">
                   <div className="staff-pic"><img src={require("./images/team-1.jpg")} alt="" /></div>
                   <h4>Mr. Ramesh Chandra</h4>
-                  <p><strong>Sales Person</strong></p>
+                  <p><strong>Manager</strong></p>
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="staff-col">
                   <div className="staff-pic"><img src={require("./images/team-2.jpg")} alt="" /></div>
                   <h4>Mr. Nitish Sharma</h4>
-                  <p><strong>Technician Head</strong></p>
+                  <p><strong>Technical Expert</strong></p>
                 </div>
               </div>
             </div>
@@ -207,7 +228,7 @@ const App = () => {
           <div className="col-lg-4 col-md-4">
             <div className="contact-conten">
               <h3>Contact Info</h3> 
-              <p><strong><i className="las la-map-marker"></i></strong> <span>PL No. 131 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span></p>
+              <p><strong><i className="las la-map-marker"></i></strong> <span>PL No. 132 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span></p>
               <p><strong><i className="las la-phone"></i></strong> <a href="tel:919780429999">+91 9780429999</a>, &nbsp; <a href="tel:919705782222">+91 9705782222</a></p>
               <p><strong><i className="lab la-whatsapp"></i></strong> <a href="https://wa.me/919052091234" target="_blank">+91 9052091234</a></p>
               <p><strong><i className="las la-envelope"></i></strong> <a href="mailto:haneef@carbiamotors.com">haneef@carbiamotors.com</a></p>			     	
@@ -233,7 +254,7 @@ const App = () => {
           <div className="col-lg-4 col-md-4 col-sm-6">
             <div className="quicklinks"><h3>Carbia SERVICES</h3>
               <div className="quicklinks-cont">
-                <p><a href="services">Best Periodic Services</a></p>
+                <p><a href="services">Periodic Services</a></p>
                 <p><a href="services">Repairs & Maintenance</a></p>
                 <p><a href="services">Electrical Repair & Diagnostics</a></p> 
                 <p><a href="services">Denting & Painting</a></p>

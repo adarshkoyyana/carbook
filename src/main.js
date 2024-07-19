@@ -14,9 +14,28 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/BannerSlider.css"; 
-import './css/TestimonialSlider.css'
+import 'animate.css/animate.min.css';
+import WOW from 'wowjs';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".main-header");
+      if (window.scrollY > 100) {
+        header.classList.add("fixed-nav");
+      } else {
+        header.classList.remove("fixed-nav");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const bannerSettings = {
     dots: false,
     infinite: true,
@@ -27,6 +46,9 @@ function App() {
     autoplaySpeed: 2000,
     cssEase: "linear"
   };
+  useEffect(() => {
+    new WOW.WOW().init();
+}, []);
 
   const testimonialSettings = {
     dots: false,
@@ -102,10 +124,10 @@ function App() {
             </div>
             <div className="col-md-6 col-sm-4 text-sm-right">
               <div className="top-call">
-                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:00AM - 6:00PM</a>
-                <a href="#" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
+                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:30AM - 6:30PM</a>
+                <a href="https://www.facebook.com/carbestinall/?paipv=0&eav=AfYUHq-IA3Kf_CUOAmg67igTmkSE4UIEaurkUOUeQ0_HwTQP_CwrslGjAbvWiuav0Wc&_rdr" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
                 <a href="#" target="_blank"> <i className="lab la-linkedin-in"></i></a>
-                <a href="#" target="_blank"> <i className="lab la-instagram"></i></a>		
+                <a href="https://www.instagram.com/carbiamotors/?igsh=MTQ4cHY2YmJzbHJ2bw%3D%3D" target="_blank"> <i className="lab la-instagram"></i></a>		
               </div>	
             </div>
           </div>
@@ -154,6 +176,11 @@ function App() {
                 <li className="nav-item">
                   <a className="nav-link" href="contact">
                     Contact Us
+                  </a>
+                </li>
+                <li className="nav-item active">
+                  <a className="nav-link" href="form">
+                    FORM
                   </a>
                 </li>
                 <li className="nav-item">
@@ -254,7 +281,7 @@ function App() {
             <h2 className="title">Why Choose Us</h2>
           </div>
           <p>
-            Carbia Motors, located in Hyderabad, Telangana, is a premier automobile service center specializing in comprehensive car repair and maintenance services. Our dedication lies in enhancing vehicle performance through expert servicing, repairs, and a vast inventory of spare parts. Utilizing cutting-edge diagnostic testers and tools, our skilled technicians adeptly tackle various automotive issues 
+            Carbia Motors, located in Gopanpally Hyderabad, Telangana, is a premier automobile service center specializing in comprehensive car repair and maintenance services. Our dedication lies in enhancing vehicle performance through expert servicing, repairs, and a vast inventory of spare parts. Utilizing cutting-edge diagnostic testers and tools, our skilled technicians adeptly tackle various automotive issues 
             <b>spanning engine, transmission, brake, suspension, AC, and electrical repairs.</b>
           </p> 
           
@@ -274,10 +301,9 @@ function App() {
         <div className="title-col wow slideInUp">
           <h3 className="title">Car Services We Offer</h3>
           <div className="title-para">
-            Looking for a reliable car wash, PPF installation, or ceramic coating service in Hyderabad? <br/><br/>
-            The Detailing Company is the place to go! We offer top-quality and hygienic services, including premium ceramic coating, to keep your car looking its best.
-            As a one-stop solution for all your car care and detailing needs, The Detailing Company is the go-to choice in Hyderabad and the surrounding area.
-          </div>
+          <strong>
+          The carbia motors is the place to go! We offer top-quality and hygienic services, to keep your car looking its best & roadworthy. As a one-stop solution for all your car care needs, The carbia motors is the go-to choice in Gopanpally - Hyderabad and the surrounding area. 
+          </strong> </div>
         </div>
 
         <div className="row justify-content-center">
@@ -352,7 +378,7 @@ function App() {
           <div className="col-sm-6 col-md-4 wow slideInLeft">
             <div className="repair-left">
               <h2 className="title">Repair Services That We Offer</h2>
-              <p>We provide a full range of front end mechanical repairs for all makes and models of cars, no matter the cause. This includes everything from struts, shocks, and tie rod ends to ball joints, springs, and basically everything that is included in repairing the front end of the vehicle.</p>
+              <p>We provide a full range of vehicle requirement from front end to rear  end mechanical & electrical repairs, services for all  premium makes and models of cars, no matter the cause. This includes everything from Vehicle body repair & paint, car spa and basically everything.</p>
               <a href="appointment" className="common-btn">Book an Appointment</a>
             </div>
           </div>
@@ -480,7 +506,7 @@ function App() {
   <div className="col-lg-4 col-md-4">
     <div className="contact-conten">
       <h3>Contact Info</h3>
-      <p><strong><i className="las la-map-marker"></i></strong> <span>PL No. 131 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span></p>
+      <p><strong><i className="las la-map-marker"></i></strong> <span>PL No. 132 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span></p>
       <p><strong><i className="las la-phone"></i></strong> <a href="tel:919780429999">+91 9780429999</a>, &nbsp; <a href="tel:919705782222">+91 9705782222</a></p>
       <p><strong><i className="lab la-whatsapp"></i></strong> <a href="https://wa.me/919052091234" target="_blank">+91 9052091234</a></p>
       <p><strong><i className="las la-envelope"></i></strong> <a href="mailto:haneef@carbiamotors.com">haneef@carbiamotors.com</a></p>
@@ -513,11 +539,13 @@ function App() {
     <div className="quicklinks"><h3>Carbia SERVICES</h3>
 
       <div className="quicklinks-cont">
-        <p><a href="services">Best Periodic Services</a></p>
+        <p><a href="services">Periodic Services</a></p>
         <p><a href="services">Repairs & Maintenance</a></p>
         <p><a href="services">Electrical Repair & Diagnostics</a></p>
         <p><a href="services">Denting & Painting</a></p>
         <p><a href="services">Car Spa / Detailing</a></p>
+        <p><a href="login">login</a></p>
+        
       </div>
     </div>
 

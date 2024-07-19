@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import logo from './images/logo.png';
 // import './css/custom.css';
 
 
 function ServicesPage() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".main-header");
+      if (window.scrollY > 100) {
+        header.classList.add("fixed-nav");
+      } else {
+        header.classList.remove("fixed-nav");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -21,10 +37,10 @@ function ServicesPage() {
             </div>
             <div className="col-md-6 col-sm-4 text-sm-right">
               <div className="top-call">
-                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:00AM - 6:00PM</a>
-                <a href="#" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
+                <a href="tel:+447342140790"><i className="las la-clock"></i> Monday-Saturday 9:30AM - 6:30PM</a>
+                <a href="https://www.facebook.com/carbestinall/?paipv=0&eav=AfYUHq-IA3Kf_CUOAmg67igTmkSE4UIEaurkUOUeQ0_HwTQP_CwrslGjAbvWiuav0Wc&_rdr" target="_blank">&nbsp; |&nbsp; <i className="lab la-facebook-f"></i></a>
                 <a href="#" target="_blank"> <i className="lab la-linkedin-in"></i></a>
-                <a href="#" target="_blank"> <i className="lab la-instagram"></i></a>		
+                <a href="https://www.instagram.com/carbiamotors/?igsh=MTQ4cHY2YmJzbHJ2bw%3D%3D" target="_blank"> <i className="lab la-instagram"></i></a>		
               </div>	
             </div>
           </div>
@@ -76,6 +92,11 @@ function ServicesPage() {
                     Contact Us
                   </a>
                 </li>
+                <li className="nav-item active">
+                  <a className="nav-link" href="form">
+                    FORM
+                  </a>
+                </li>
                 <li className="nav-item">
                   <a className="nav-link" href="appointment">
                     Book Appointment
@@ -90,7 +111,7 @@ function ServicesPage() {
 
       <div className="inner-banner">
       <h1>Our Services</h1>
-      <img src={require("./images/inner-banner.jpg")} alt="" className="img-responsive" />
+      <img src={require("./images/service-banner.jpg")} alt="" className="img-responsive" />
     </div>
 
     <div className="inner-page">
@@ -229,7 +250,7 @@ function ServicesPage() {
   <div className="col-lg-4 col-md-4">
     <div className="contact-conten">
       <h3>Contact Info</h3>
-      <p><strong><i className="las la-map-marker"></i></strong> <span>PL No. 131 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span></p>
+      <p><strong><i className="las la-map-marker"></i></strong> <span>PL No. 132 Ranganadha Nagar, Gopanpally, Srilingampally, Hyderabad 500019.</span></p>
       <p><strong><i className="las la-phone"></i></strong> <a href="tel:919780429999">+91 9780429999</a>, &nbsp; <a href="tel:919705782222">+91 9705782222</a></p>
       <p><strong><i className="lab la-whatsapp"></i></strong> <a href="https://wa.me/919052091234" target="_blank">+91 9052091234</a></p>
       <p><strong><i className="las la-envelope"></i></strong> <a href="mailto:haneef@carbiamotors.com">haneef@carbiamotors.com</a></p>
@@ -262,7 +283,7 @@ function ServicesPage() {
     <div className="quicklinks"><h3>Carbia SERVICES</h3>
 
       <div className="quicklinks-cont">
-        <p><a href="services">Best Periodic Services</a></p>
+        <p><a href="services">Periodic Services</a></p>
         <p><a href="services">Repairs & Maintenance</a></p>
         <p><a href="services">Electrical Repair & Diagnostics</a></p>
         <p><a href="services">Denting & Painting</a></p>

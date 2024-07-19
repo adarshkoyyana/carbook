@@ -1,0 +1,123 @@
+.login-container {
+    display: flex;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  .left-container {
+    flex: 6;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+   
+  }
+  
+  
+  .left-container img{
+    max-height: 440px;
+    max-width: 100%;
+  }
+  
+  .right-container {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 10vh;
+  }
+  
+  .form-wrapper {
+    max-width: 300px;
+    overflow: hidden;
+  }
+  
+  .header-logo {
+    text-align: start;
+    margin-bottom: 5px;
+    margin-top: 30vh;
+  }
+  
+  .header-logo img {
+    max-width: 150px;
+  }
+  
+  .form-header {
+    text-align: start;
+    margin-bottom: 20px;
+    margin-left: 2vh;
+    width: 100%;
+  }
+  
+  .form-body {
+    text-align: start;
+    margin-left: 3vh;
+    font-weight: bold;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .input-addon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60vh;
+  }
+  
+  .input-group label {
+    margin-right: 10px;
+    margin-left: 2vh;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .input-addon {
+    margin-left: 80%;
+  }
+  
+  .input-addon img:last-child {
+    max-height: 17px;
+    margin-left: 10px;
+  }
+  
+  .logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-top: 20px;
+  }
+  
+  .form-group-login button {
+    background-color: #01b4b9;;
+    padding: 15px 0px;
+    width: 30vh;
+    font-size: 16px;
+    color: white;
+    border-radius: 1vh;
+    margin-right: 10vh;
+    margin-bottom: 20vh;
+    cursor: pointer;
+  }
+  
+  .copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #0f0f0f;
+  }
+  
+  
+  

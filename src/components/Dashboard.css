@@ -1,0 +1,64 @@
+/* Dashboard.css */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-button {
+    width: 150px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.logodash {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.data-container {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.table-container {
+    max-height: 500px; /* Adjust based on your layout */
+    overflow-y: auto;
+}
+
+.table-paper {
+    padding: 20px;
+}
+
+.table-title {
+    margin-bottom: 10px;
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+.table-cell {
+    padding: 10px;
+}

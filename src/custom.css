@@ -317,7 +317,7 @@ ul.submenu.dropdown-menu a{ font-size: 14px; padding-top: 4px; padding-bottom: 4
 
 .banner{
   position: relative;
-  background: #fff;
+  background: #1e222b;
 }
 
 .banner img{ max-height:620px; object-fit:cover; }
